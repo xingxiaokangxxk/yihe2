@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .outer{
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+        .outer0{
+           width: 100%;
+           position: relative;
+
+        }
+        .outer1{
+            float: left;
+            margin-left: 80px;
+            margin-right: 100px;
+        }
+        .outer2{
+            float: left;
+        }
+        .outer-2{
+            float: left;
+            margin-right: 10px;
+        }
+        .outer-3{
+            float: left;
+        }
+        a:link{
+            color: yellow;
+        }
+        a:visited{
+            color:red;
+        }
+        /*鼠标悬浮的样式*/
+        a:hover{
+            color: blue;
+        }
+        /*鼠标下去没抬起来的样式*/
+        a:active{
+            color: green;
+        }
+        .center{
+           width: 100%;
+           position: relative;
+        }
+        .center1{
+            float: left;
+            margin-left: 80px;
+            margin-top: 20px;
+        }
+        .center2{
+            margin-left: 100px;
+            margin-top: 10px;
+            position: absolute;
+            left: 250px;
+        }
+        .center3{
+            width:265px;
+            height: 30px;
+            position: absolute;
+            left: 350px;
+            bottom: 50px;
+            border:2px solid black;
+        }
+        .center4{
+            width:500px;
+            height: 30px;
+            position: absolute;
+            left: 350px;
+            bottom: 5px;
+        }
+        .center5{
+            position: absolute;
+            left: 730px;
+            bottom: 52px;
+        }
+
+        .centera{
+            width: 1832px;
+            height: 457px;
+            overflow: hidden;
+            position: relative;
+
+        }
+        .item{
+            width: 1832px;
+            height: 457px;
+            float: left;
+            position: absolute;
+            background: no-repeat;
+        }
+        .itemBack{
+            /*left: 1040px;*/
+            background-image: url("../resource/yihe/lunbo3.png");
+
+        }
+
+        .item1{
+            /*left: 0;*/
+            background-image: url("../resource/yihe/lunbo1.png");
+            display: block;
+        }
+        .item2{
+            /*left: 520px;*/
+            background-image: url("../resource/yihe/lunbo2.png");
+        }
+        .item3{
+            /*left: 1040px;*/
+            background-image: url("../resource/yihe/lunbo3.png");
+        }
+        .itemFirst{
+            /*left: 0;*/
+            background-image: url("../resource/yihe/lunbo1.png");
+            display: block;
+        }
+        .contain {
+            position: relative;
+            height: 20px;
+            /*transition: all 1s;*/
+        }
+        .lefts,.rights{
+            color: white;
+            font-size: 40px;
+            width: 40px;
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+        }
+        .lefts{
+            left: 0;
+        }
+        .rights{
+           left: 1340px;
+        }
+        .centera:hover .lefts,.centera:hover .rights{
+            display: block;
+        }
+        .lists{
+            border-radius: 9.5px;
+            width: 150px;
+            height: 15px;
+            background: rgba(127,127,127,0.7);
+            position: absolute;
+            left: 40%;
+            bottom: 10px;
+            margin-left: -30px;
+            padding: 2px;
+        }
+        .list{
+            width: 15px;
+            height: 15px;
+            background: #B7B7B7;
+            border-radius: 50%;
+            float: left;
+        }
+        .centerb{
+            width: 100%;
+            height: 200px;
+            position: relative;
+            margin-top: 20px;
+            margin-left: 20px;
+
+        }
+        .centerb-1{
+            float: left;
+            background: no-repeat;
+            width: 25%;
+            margin-top: 20px;
+        }
+        .centerc{
+            position: relative;
+            width: 100%;
+            height: 500px;
+            margin-left: 30px;
+
+        }
+        .centerc-right {
+
+            height: 350px;
+            position: relative;
+
+        }
+        .centerc-right-1{
+            float: left;
+            background: no-repeat;
+            width: 220px;
+            height: 130px;
+            position: relative;
+        }
+        .align-center{
+            width: 1200px;
+            margin: auto;
+        }
+        .qitem{
+            width: 1200px;
+            /*height: 450px;*/
+            /*如果div不设置高度是由内容撑开的*/
+            padding: 20px 0;
+
+        }
+        .qitem-header{
+            width: 1200px;
+            height: 50px;
+            margin-bottom: 15px;
+
+        }
+        .qitem-center{
+            width: 1200px;
+            /*height: 500px;*/
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .qitem-center-left{
+            float: left;
+
+        }
+        .qitem-center-right{
+            width: 884px;
+            float: left;
+            height: 516px;
+
+        }
+        .qitem-header-item{
+            float: left;
+            margin-right: 100px;
+            font-size: x-large;
+
+        }
+        .qitem-center-right-item{
+            float: left;
+            height: 258px;
+            margin-left: 20px;
+
+        }
+        .align-centere{
+
+            margin: auto;
+            width: 1200px;
+        }
+        .footer{
+            padding: 10px;
+            width: 1200px;
+            margin: auto;
+        }
+        .footer-top{
+            width: 1200px;
+        }
+        .footer-top-item{
+            width: 1200px;
+            overflow: hidden;
+
+
+        }
+        .footer-top-item-a{
+            float: left;
+            margin-right: 110px;
+            font-size:xx-large;
+            font-weight: 300;
+        }
+
+        .footer-center{
+            width: 1200px;
+            padding-top: 10px;
+            overflow: hidden;
+
+        }
+        .footer-center-a{
+            float: left;
+            margin-right: 50px;
+        }
+        .footer-top{
+            width: 1200px;
+        }
+
+    </style>
+</head>
+<body>
+<div style="width: 100%;height: 100%">
+    <div class="outer">
+        <div class="outer0">
+            <div class="outer1">
+                所在城市：北京^
+            </div>
+            <div class="outer2">
+                <div class="outer-2">
+                   <span>您好，</span>
+                   <span>18888888</span>
+                </div>
+                <div class="outer-3">
+                    <a href="java41.html">退出|</a>
+                    <a href="java41.html">我的订单|</a>
+                    <a href="java41.html">我的消息|</a>
+                    <a href="java41.html">我是商家|</a>
+                    <span>400-800-8820</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="center" style="width: 100%;height: 120px" >
+        <div class="center center1">
+            <img src="../resource/yihe/logo.jpg">
+        </div>
+        <div class="center center2">
+           <a style="margin-right: 30px">商家</a>
+           <a>商品</a>
+        </div>
+        <div class="center center3">
+        </div>
+        <div class="center center4 " >
+            <a >热门：</a>
+            <a >酒店</a>
+            <a >洗车</a>
+            <a >餐饮</a>
+            <a >进口</a>
+            <a >旅游</a>
+            <a >如家</a>
+        </div>
+        <div class="center center5">
+            <a style="margin-right: 50px">我的易和</a>
+            <a>购物车</a>
+        </div>
+    </div>
+    <div class="centera">
+        <div class="contain" style="left: -1832px;transition: all,1s">
+            <div class="item itemBack" style="left: 0">
+            </div>
+            <div class="item item1" style="left: 1832px">
+            </div>
+            <div class="item item2" style="left: 3664px">
+            </div>
+            <div class="item item3" style="left: 5496px">
+            </div>
+            <div class="item itemFirst" style="left: 7328px">
+            </div>
+        </div>
+        <div class="lefts">
+            <
+        </div>
+        <div class="rights">
+            >
+        </div>
+        <div class="lists">
+            <div class="list" style="background: red">
+            </div>
+            <div class="list" style="margin-left: 50px;margin-right: 50px">
+            </div>
+            <div class="list">
+            </div>
+        </div>
+    </div>
+    <div class="centerb" style="margin: auto;width: 1200px">
+        <div class="centerb-1">
+            <img src="../resource/yihe/当红好店.png">
+        </div>
+        <div class="centerb-1">
+            <img src="../resource/yihe/复古风.png">
+        </div>
+        <div class="centerb-1">
+            <img src="../resource/yihe/男装馆.png">
+        </div>
+        <div class="centerb-1">
+            <img src="../resource/yihe/美妆馆.png">
+        </div>
+    </div>
+    <div class="centerc" style="margin: auto;width: 1200px">
+        <h1 style="font-size: 40px;font-weight: bold;color: red">精选品牌</h1>
+        <div class="centerc-left" style=";height:350px;float: left;position: relative">
+            <div>
+                <img src="../resource/yihe/x1.jpg">
+            </div>
+        </div>
+        <div class="centerc-right">
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x2.jpg">
+            </div>
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x3.jpg">
+            </div>
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x4.jpg">
+            </div>
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x5.jpg">
+            </div>
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x6.jpg">
+            </div>
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x7.jpg">
+            </div>
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x8.jpg">
+            </div>
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x9.jpg">
+            </div>
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x10.jpg">
+            </div>
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x11.jpg">
+            </div>
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x12.jpg">
+            </div>
+            <div class="centerc-right-1">
+                <img src="../resource/yihe/x13.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="centerd">
+        <div class="align-center">
+            <div class="qitem">
+                <div class="qitem-header">
+                    <div class="qitem-header-item" style="color:blue;font-size: xx-large;margin-right: 200px ">汽车装饰</div>
+                    <div class="qitem-header-item">爆款推荐</div>
+                    <div class="qitem-header-item">精品男装</div>
+                    <div class="qitem-header-item">精品女装</div>
+                </div>
+                <div class="qitem-center">
+                    <div class="qitem-center-left">
+                        <img src="../resource/yihe/c1.jpg">
+                    </div>
+                    <div class="qitem-center-right">
+                        <div class="qitem-center-right-item">
+                            <img src="../resource/yihe/c2.jpg">
+                            <div style="font-style: italic">李杰</div>
+                            <div style="font-style: inherit">18823654125</div>
+                            <div style="font-style: oblique">上海市松江区泗泾镇</div>
+                        </div>
+                        <div class="qitem-center-right-item">
+                            <img src="../resource/yihe/c3.jpg">
+                            <div style="font-style: italic">李杰</div>
+                            <div style="font-style: inherit">18823654125</div>
+                            <div style="font-style: oblique">上海市松江区泗泾镇</div>
+                        </div>
+                        <div class="qitem-center-right-item">
+                            <img src="../resource/yihe/c4.jpg">
+                            <div style="font-style: italic">李杰</div>
+                            <div style="font-style: inherit">18823654125</div>
+                            <div style="font-style: oblique">上海市松江区泗泾镇</div>
+                        </div>
+                        <div class="qitem-center-right-item">
+                            <img src="../resource/yihe/c5.jpg">
+                            <div style="font-style: italic">李杰</div>
+                            <div style="font-style: inherit">18823654125</div>
+                            <div style="font-style: oblique">上海市松江区泗泾镇</div>
+                        </div>
+                        <div class="qitem-center-right-item">
+                            <img src="../resource/yihe/c6.jpg">
+                            <div style="font-style: italic">李杰</div>
+                            <div style="font-style: inherit">18823654125</div>
+                            <div style="font-style: oblique">上海市松江区泗泾镇</div>
+                        </div>
+                        <div class="qitem-center-right-item">
+                            <img src="../resource/yihe/c7.jpg">
+                            <div style="font-style: italic">李杰</div>
+                            <div style="font-style: inherit">18823654125</div>
+                            <div style="font-style: oblique">上海市松江区泗泾镇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="centere" >
+        <div class="align-centere">
+            <div class="iteme">
+                <div style="padding:auto">
+                    <img src="../resource/yihe/footer3.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-top">
+            <div class="footer-top-item">
+                <div class="footer-top-item-a">正品保障</div>
+                <div class="footer-top-item-a">全程追踪</div>
+                <div class="footer-top-item-a">客户监督</div>
+                <div class="footer-top-item-a">售后无忧</div>
+                <div class="footer-top-item-a">准时送达</div>
+            </div>
+        </div>
+        <div class="footer-center">
+            <div class="footer-center-a"style="padding: 20px 0">
+                <img src="../resource/yihe/logo.jpg">
+            </div>
+            <div class="footer-center-a">
+                <img src="../resource/yihe/二维码1.png">
+            </div>
+            <div class="footer-center-a">
+                <img src="../resource/yihe/二维码1.png">
+            </div>
+            <div class="footer-center-a">
+                <div style="font-size: x-large;font-weight: 800">关于易和</div>
+                <div>新用户注册</div>
+                <div>在线下单</div>
+                <div>支付方式</div>
+            </div>
+            <div class="footer-center-a">
+                <div style="font-size: x-large;font-weight: 800">运费说明</div>
+                <div>配送服务</div>
+                <div>在线方式</div>
+                <div>发票说明</div>
+            </div>
+            <div class="footer-center-a">
+                <div style="font-size: x-large;font-weight: 800">售后服务</div>
+                <div>退换货规则</div>
+                <div>服务保障承诺</div>
+                <div>验货与签收</div>
+            </div>
+            <div class="footer-center-a">
+                <div style="font-size: x-large;font-weight: 800">加盟易和</div>
+                <div>加盟条款</div>
+                <div>公司简介</div>
+                <div>服务协议</div>
+            </div>
+        </div>
+        <div class="footer-footer">
+            <div class="footer-footer-top ">
+                <div style="margin-left: 376px">
+                    版权所有  2016易和生活港 保留所有权利 | 沪ICP备12042163
+                </div>
+                <div style="margin-left: 495px;color: blue;margin-top: 30px">
+                    易和生活   众享品质
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var items=document.getElementsByClassName("item");
+    var contain=document.getElementsByClassName("contain")[0];
+    var outerDiv=document.getElementsByClassName("centera")[0];
+    var listDiv=document.getElementsByClassName("list");
+    var prev=document.getElementsByClassName("lefts")[0];
+    var next=document.getElementsByClassName("rights")[0];
+    var num1=1;
+    function moveImg() {
+
+        var left=contain.style.left;
+        left=left.substring(left.length-2,-1);
+
+        if(left=="-7328"){
+            contain.style.transition="";
+            contain.style.left="-1832px";
+            setTimeout(function () {
+                contain.style.transition="all 1s";
+                contain.style.left="-3664px";
+            },50);
+
+        }else{
+            contain.style.left=left-1832+"px";
+        }
+        for(var i=0;i<listDiv.length;i++){
+            listDiv[i].style.background="#B7B7B7";
+        }
+
+        if(num1>=listDiv.length){
+            num1=0;
+        }
+        if(num1<0){
+            num1=listDiv.length-1;
+        }
+        listDiv[num1].style.background="#F40";
+        num1++;
+
+    }
+
+    var num=setInterval(moveImg,2000);
+    function  clearTime() {
+        clearInterval(num);
+    }
+    outerDiv.onmouseover=function () {
+        console.log("heiheihei");
+        clearTime();
+    }
+    outerDiv.onmouseout=function () {
+        console.log("我是outer");
+        num=setInterval(moveImg,2000);
+        console.log("定时器的num是："+num);
+    }
+
+    prev.onclick=function () {
+
+        contain.style.transition="all 1s";
+        var newLeft=parseInt(contain.style.left)+1832;
+        contain.style.left=newLeft+"px";
+        if (newLeft>-1832){
+            contain.style.transition="";
+            contain.style.left=-5496+"px";
+        }
+        for(var i=0;i<listDiv.length;i++){
+            listDiv[i].style.background="#B7B7B7";
+        }
+
+        if(num1<0){
+            num1=listDiv.length-1;
+        }
+        console.log("qwee"+num1)
+        listDiv[num1].style.background="#F40";
+        num1--;
+    }
+    next.onclick=function () {
+        contain.style.transition="all 1s";
+        var newLeft=parseInt(contain.style.left)-1832;
+        contain.style.left=newLeft+"px";
+        if (newLeft<-7328) {
+            contain.style.left = -3664 + "px";
+        }
+        for(var i=0;i<listDiv.length;i++){
+            listDiv[i].style.background="#B7B7B7";
+        }
+        if(num1>=listDiv.length){
+            num1=0;
+        }
+        listDiv[num1].style.background="#F40";
+        num1++;
+    }
+
+    for(var i=0;i++;i<listDiv.length){
+        (function (i) {
+            listDiv[i].onclick=function () {
+                listDiv[i].style.background="#F40";
+            }
+        })(i)
+
+    }
+
+
+</script>
+
+</html>
